@@ -1,6 +1,6 @@
 Summary:	Yet Another Graphic Front-end for Cuneiform
 Name:		yagf
-Version:	0.8.1
+Version:	0.8.3
 Release:	1%{?dist}
 
 License:	GPLv3
@@ -8,10 +8,10 @@ Group:		Applications/Multimedia
 Summary:	Graphical frontend for Cuneiform OCR tool
 URL:		http://symmetrica.net/cuneiform-linux/yagf-en.html
 
-Source:		http://symmetrica.net/cuneiform-linux/yagf-%{version}.tar.gz
+Source:		http://symmetrica.net/cuneiform-linux/%{name}-%{version}-Source.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:	qt-devel
+BuildRequires:	qt-devel >= 4.6
 BuildRequires:	aspell-devel
 BuildRequires:	cmake
 
@@ -35,7 +35,7 @@ online help for more details).
 
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-Source
 
 
 %build
@@ -62,6 +62,7 @@ rm -rf %{buildroot}
     
 
 %changelog
+* Wed Jan 12 2010 Arkady L. Shane <ashejn@yandex-team.ru> - 0.8.3-1
 * Thu Nov  8 2010 Arkady L. Shane <ashejn@yandex-team.ru> - 0.8.1-1
 - initial build for Fedora
 - review spec file from official src.rpm of Andrei Borovsky
