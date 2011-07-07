@@ -1,7 +1,7 @@
 Summary:	Yet Another Graphic Front-end for Cuneiform
 Name:		yagf
-Version:	0.8.5
-Release:	1%{?dist}
+Version:	0.8.6
+Release:	1%{?dist}.R
 
 License:	GPLv3
 Group:		Applications/Multimedia
@@ -62,6 +62,9 @@ rm -rf %{buildroot}
     
 
 %changelog
+* Thu Jun  7 2011 Arkady L. Shane <ashejn@yandex-team.ru> - 0.8.6-1
+- update to 0.8.6
+
 * Sat Jan 29 2011 Arkady L. Shane <ashejn@yandex-team.ru> - 0.8.5-1
 - update to 0.8.5
 
