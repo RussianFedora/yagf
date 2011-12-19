@@ -35,7 +35,7 @@ online help for more details).
 
 
 %prep
-%setup -q -n %{name}-%{version}-Source
+%setup -q
 
 
 %build
