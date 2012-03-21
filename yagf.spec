@@ -1,22 +1,22 @@
-Summary:	Yet Another Graphic Front-end for Cuneiform
-Name:		yagf
-Version:	0.8.9
-Release:	1%{?dist}.R
+Summary:    Yet Another Graphic Front-end for Cuneiform
+Name:       yagf
+Version:    0.9
+Release:    1%{?dist}
 
-License:	GPLv3
-Group:		Applications/Multimedia
-Summary:	Graphical frontend for Cuneiform OCR tool
-URL:		http://symmetrica.net/cuneiform-linux/yagf-en.html
+License:    GPLv3
+Group:      Applications/Multimedia
+Summary:    Graphical frontend for Cuneiform OCR tool
+URL:        http://symmetrica.net/cuneiform-linux/yagf-en.html
 
-Source:		http://symmetrica.net/cuneiform-linux/%{name}-%{version}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Source:     http://symmetrica.net/cuneiform-linux/%{name}-%{version}.tar.gz
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:	qt-devel >= 4.2
-BuildRequires:	aspell-devel
-BuildRequires:	cmake
+BuildRequires:  qt-devel >= 4.6
+BuildRequires:  aspell-devel
+BuildRequires:  cmake
 
-Requires:	xsane
-Requires:	cuneiform
+Requires:       xsane
+Requires:       cuneiform
 
 
 %description
@@ -40,7 +40,7 @@ online help for more details).
 
 %build
 cmake ./
-make CPACK_PREFX=/usr/ 
+make %{?_smp_mflags} CPACK_PREFX=/usr/
 
 %install
 rm -rf %{buildroot}
@@ -62,6 +62,9 @@ rm -rf %{buildroot}
     
 
 %changelog
+* Wed Mar 21 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 0.9-1.R
+- update to 0.9.0
+
 * Mon Dec 19 2011 Arkady L. Shane <ashejn@yandex-team.ru> - 0.8.9-1.R
 - update to 0.8.9
 
